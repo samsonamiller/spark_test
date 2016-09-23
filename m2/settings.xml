@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <localRepository>/root/.m2/repository</localRepository>
+
+  <servers>
+    <server>
+      <username>healthfidelity</username>
+      <id>central</id>
+      <password>{lCSB6W5StQ8Hkm80m/kbiNnSxjvatuOXYIqWEYPQCwI=}</password>
+    </server>
+    <server>
+      <username>healthfidelity</username>
+      <id>snapshots</id>
+      <password>{lCSB6W5StQ8Hkm80m/kbiNnSxjvatuOXYIqWEYPQCwI=}</password>
+    </server>
+    <server>
+      <username>healthfidelity</username>
+      <id>thirdparty</id>
+      <password>{lCSB6W5StQ8Hkm80m/kbiNnSxjvatuOXYIqWEYPQCwI=}</password>
+    </server>
+    <server>
+      <username>healthfidelity</username>
+      <id>temp</id>
+      <password>{lCSB6W5StQ8Hkm80m/kbiNnSxjvatuOXYIqWEYPQCwI=}</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>artifactory</id>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>hf-releases</name>
+          <url>https://artifactory.healthfidelity.com/artifactory/libs-release</url>
+        </repository>
+        <repository>
+          <snapshots><enabled>true</enabled></snapshots>
+          <id>snapshots</id>
+          <name>hf-snapshots</name>
+          <url>https://artifactory.healthfidelity.com/artifactory/libs-snapshot</url>
+        </repository>
+        <repository>
+          <id>thirdparty</id>
+          <snapshots><enabled>false</enabled></snapshots>
+          <name>thirdparty</name>
+          <url>http://artifactory.healthfidelity.com/artifactory/ext-release-local</url>
+        </repository>
+        <repository>
+          <id>temp</id>
+          <snapshots><enabled>false</enabled></snapshots>
+          <name>temp</name>
+          <url>https://artifactory.healthfidelity.com/artifactory</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>plugins-release</name>
+          <url>https://artifactory.healthfidelity.com/artifactory/plugins-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>plugins-snapshot</name>
+          <url>https://artifactory.healthfidelity.com/artifactory/plugins-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>
